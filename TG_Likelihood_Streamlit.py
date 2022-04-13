@@ -51,7 +51,7 @@ if uploaded_file is not None:
 
     # round to make sure it rounds to nearest 10
     dfpair = df[(df['depthbin_S'] ==round(dep_shallow_meters,-1)) & (df['depthbin_R'] == round(dep_reservoir_meters,-1))] # df[df['depthbin_S'] ==20] #
-    dfpair.describe()
+
     ph=sns.kdeplot(data=dfpair,x='tempbin_R',y='tempbin_S',fill=True,cmap='rainbow',alpha=0.4,cbar=True,ax=axes)
     axes.set_ylim(0,myxbins[-1])
     axes.set_xlim(0,myxbins[-1])
@@ -60,4 +60,6 @@ if uploaded_file is not None:
     x = np.linspace(*axes.get_xlim())
     plt.plot(x, x,'r',alpha=0.5)
     st.pyplot(fig)
+
+    st.write(dfpair.describe())
 

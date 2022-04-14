@@ -4,6 +4,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# 1 made empty repository on github
+# 2 PyCharm Project from github: .py script that is github, made script & requirements.txt, commit & pushed
+# 3 Log into streamlit, and app is there...
+
 st.title('TG Likelihoods: shallow and deep temperatures')
 
 # LOCATION OF THIS FILE
@@ -29,6 +33,7 @@ def load_data():
 uploaded_file = st.file_uploader("Choose a file",type=['csv'])
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
+    st.write('File preview...')
     st.write(df.head())
 
     st.subheader('TG Shallow-Deep Pairs')

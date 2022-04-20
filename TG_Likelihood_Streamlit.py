@@ -66,5 +66,6 @@ if uploaded_file is not None:
     plt.plot(x, x,'r',alpha=0.5)
     st.pyplot(fig)
 
+    st.write('Summary statistics for shallow/deep temperature pair displayed above')
     st.write(dfpair.describe())
 
